@@ -17,12 +17,6 @@ export default class Todo extends Component {
       list: []
     }
 
-    this.handleClearSearch = this.handleClearSearch.bind(this)
-
-    this.refresh()
-  }
-
-  handleClearSearch() {
     this.refresh()
   }
 
@@ -36,7 +30,7 @@ export default class Todo extends Component {
     return (
       <div>
         <PageHeader name="Tasks" small="form" />
-        <TodoForm handleClearSearch={this.handleClearSearch} />
+        <TodoForm />
         <TodoList />
       </div>
     )
