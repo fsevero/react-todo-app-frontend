@@ -17,15 +17,9 @@ export default class Todo extends Component {
       list: []
     }
 
-    this.handleRemove = this.handleRemove.bind(this)
     this.handleClearSearch = this.handleClearSearch.bind(this)
 
     this.refresh()
-  }
-
-  handleRemove(todo) {
-    axios.delete(`${URL}/${todo._id}`)
-      .then( resp => this.refresh(this.state.description) )
   }
 
   handleClearSearch() {
@@ -42,10 +36,8 @@ export default class Todo extends Component {
     return (
       <div>
         <PageHeader name="Tasks" small="form" />
-
         <TodoForm handleClearSearch={this.handleClearSearch} />
-
-        <TodoList handleRemove={this.handleRemove}/>
+        <TodoList />
       </div>
     )
   }
